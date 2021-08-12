@@ -57,10 +57,12 @@ def seg_and_patch(source, save_dir, patch_save_dir, mask_save_dir, stitch_save_d
 
 
 	if os.path.isdir(source):
+		print("DIRECTORY!")
 		slides = sorted(os.listdir(source))
 		slides = [slide for slide in slides if os.path.isfile(os.path.join(source, slide))]
 	elif os.path.isfile(source):
 		slides = [source]
+
 	if process_list is None:
 		df = initialize_df(slides, seg_params, filter_params, vis_params, patch_params)
 	
