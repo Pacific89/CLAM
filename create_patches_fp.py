@@ -55,11 +55,12 @@ def seg_and_patch(source, save_dir, patch_save_dir, mask_save_dir, stitch_save_d
 				  patch = False, auto_skip=True, process_list = None):
 	
 
-
+	single_file = False
 	if os.path.isdir(source):
 		slides = sorted(os.listdir(source))
 		slides = [slide for slide in slides if os.path.isfile(os.path.join(source, slide))]
 	elif os.path.isfile(source):
+		single_file = True
 		slides = [source]
 
 	if process_list is None:
@@ -96,7 +97,9 @@ def seg_and_patch(source, save_dir, patch_save_dir, mask_save_dir, stitch_save_d
 		
 		df.loc[idx, 'process'] = 0
 		slide_id, _ = os.path.splitext(slide)
-		print("SLIDE ID: ", slide_id)
+		if single_file:
+			slide_id = slide_id.split("/")[-1]
+			print("SLIDE ID: ", slide_id)
 
 		if auto_skip and os.path.isfile(os.path.join(patch_save_dir, slide_id + '.h5')):
 			print('{} already exist in destination location, skipped'.format(slide_id))
