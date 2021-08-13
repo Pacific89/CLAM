@@ -106,7 +106,7 @@ def seg_and_patch(source, save_dir, patch_save_dir, mask_save_dir, stitch_save_d
 		if os.path.isdir(source):
 			full_path = os.path.join(source, slide)
 		elif os.path.isfile(source):
-			full_path = os.path.join(source, "")
+			full_path = source
 
 		WSI_object = WholeSlideImage(full_path)
 
