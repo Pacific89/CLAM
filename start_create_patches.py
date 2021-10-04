@@ -3,7 +3,7 @@ import sys
 import os
 
 # open config file for "RUN-COMMAND"
-with open("usr/local/config/hqc_command_config.json") as json_file:
+with open("usr/local/config/clam_command_config.json") as json_file:
     clam_config = json.loads(json_file.read())
 
 patch_size = 128 # set patch size (128 needed for ARA-NET / 224 needed for VGG16 feature extraction)
