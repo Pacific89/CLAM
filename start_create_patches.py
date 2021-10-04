@@ -24,7 +24,7 @@ if __name__ == "__main__":
     # create input path:
     input_path = "usr/local/data/{0}".format(file_name)
     # create correct command to start HQC:
-    clam_command = "python usr/local/src/clam/create_patches_fp.py --source {0} --save_dir {1} --patch_size {2} {3} {4} {5}".format(input_path, output_path, patch_size, seg, patch, stich)
+    clam_command = "python usr/local/src/clam/create_patches_fp.py --source {0} --save_dir {1} --patch_size {2} {3} {4} {5}".format(input_path, output_path, patch_size, seg, patch, stitch)
     # start HQC:
     # os.system(clam_command)
     print(clam_command)
