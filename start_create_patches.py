@@ -6,7 +6,7 @@ import os
 with open("usr/local/config/clam_command_config.json") as json_file:
     clam_config = json.loads(json_file.read())
 
-patch_size = 128 # set patch size (128 needed for ARA-NET / 224 needed for VGG16 feature extraction)
+patch_size = clam_config["patch_size"] # set patch size (128 needed for ARA-NET / 224 needed for VGG16 feature extraction)
 seg = "--seg" if json.loads(clam_config["seg"].lower()) else ""
 patch = "--patch" if json.loads(clam_config["patch"].lower()) else ""
 stitch = "--stitch" if json.loads(clam_config["stitch"].lower()) else ""
@@ -24,7 +24,7 @@ if __name__ == "__main__":
     # create input path:
     input_path = "usr/local/data/{0}".format(file_name)
     # create correct command to start HQC:
-    clam_command = "python usr/local/src/clam/create_patches_fp.py --source {0} --save_dir {1} --patch_size {2} --seg --patch".format(input_path, output_path, patch_size)
+    clam_command = "python usr/local/src/clam/create_patches_fp.py --source {0} --save_dir {1} --patch_size {2} {3} {4} {5}".format(input_path, output_path, patch_size, seg, patch, stich)
     # start HQC:
     # os.system(clam_command)
     print(clam_command)
