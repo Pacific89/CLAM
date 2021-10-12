@@ -14,7 +14,7 @@ if __name__ == "__main__":
     parser.add_argument('input_pattern',
                 help="one input file: example.svs",
                 nargs=1)
-    parser.add_argument('-c', '--config', help="json string with config parameters", default="{0}".format(clam_config), type=str)
+    parser.add_argument('-c', '--config', help="json string with config parameters: \n Defaults: {0}".format(clam_config), type=str)
 
     args = parser.parse_args()
 
