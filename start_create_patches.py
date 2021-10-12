@@ -1,6 +1,7 @@
 import json
 import sys
 import os
+import argparse
 
 # open config file for "RUN-COMMAND"
 with open("usr/local/config/clam_command_config.json") as json_file:
