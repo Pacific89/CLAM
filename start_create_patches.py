@@ -55,7 +55,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     print(args)
 
-    if args.cp:
+    if args.create_patches:
         call_create_patches(args)
-    elif args.ef:   
+    elif args.extract_features:   
         call_extract_features(args)
