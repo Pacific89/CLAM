@@ -4,7 +4,7 @@ import os
 import argparse
 
 # open config file for "RUN-COMMAND"
-with open("usr/local/config/clam_command_config.json") as json_file:
+with open("/usr/local/config/clam_command_config.json") as json_file:
     clam_config = json.loads(json_file.read())
 
 def call_create_patches(args):
@@ -32,7 +32,7 @@ def call_create_patches(args):
     # get filename from command line arguments:
     file_name = sys.argv[1]
     # create input path:
-    input_path = "usr/local/data/{0}".format(file_name)
+    input_path = "/usr/local/data/{0}".format(file_name)
     # create correct command to create patch coordinates using CLAM:
     clam_command = "python usr/local/src/clam/create_patches_fp.py --source {0} --save_dir {1} --patch_size {2} {3} {4} {5}".format(input_path, output_path, patch_size, seg, patch, stitch)
     # start CLAM:
@@ -56,5 +56,5 @@ if __name__ == "__main__":
 
     if args.cp:
         call_create_patches(args)
-    elif args.ef:
+    elif args.ef:   
         call_extract_features(args)
