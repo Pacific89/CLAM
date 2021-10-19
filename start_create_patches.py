@@ -53,6 +53,7 @@ if __name__ == "__main__":
     parser.add_argument('-ef', '--extract_features', help="call extract_features.py",default=False, action="store_true")
 
     args = parser.parse_args()
+    print(args)
 
     if args.cp:
         call_create_patches(args)
