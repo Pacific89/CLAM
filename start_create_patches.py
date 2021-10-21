@@ -48,7 +48,7 @@ def call_extract_features(args):
     output_path = clam_config["output_path"] + "/{0}/data/clam".format(input_folder) # set output folder
     feat_dir = output_path + "/features"
     csv_path = output_path + "/process_list_autogen.csv"
-    data_h5_dir = output_path + "/patches"
+    data_h5_dir = output_path
 
     clam_command = "python usr/local/src/clam/extract_features_fp.py --data_slide_dir {0} --csv_path {1} --feat_dir {2} --data_h5_dir {3}".format(input_path, csv_path, feat_dir, data_h5_dir)
 
