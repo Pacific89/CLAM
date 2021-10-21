@@ -44,7 +44,7 @@ def call_create_patches(args):
 def call_extract_features(args):
 
     input_folder = sys.argv[1]
-    output_path = clam_config["output_path"] + "/{0}/data/clam".format(file_name.split(".svs")[0]) # set output folder
+    output_path = clam_config["output_path"] + "/{0}/data/clam".format(input_folder) # set output folder
     feat_dir = output_path + "/features"
     csv_path = output_path + "process_list_autogen.csv"
     data_h5_dir = output_path + "/patches"
