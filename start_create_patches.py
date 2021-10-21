@@ -29,7 +29,7 @@ def call_create_patches(args):
         preset = "--preset preset.csv"
         patch_level = "--patch_level {0}".format(int(clam_config["patch_level"])) # downsample level for patch calculation
         process_list = "--process_list process_list.csv"
-        output_path = clam_config["output_path"] + "/{0}/clam".format(filename.split(".svs")[0]) # set output folder
+        output_path = clam_config["output_path"] + "/{0}/clam".format(file_name.split(".svs")[0]) # set output folder
 
         print("CONFIG:")
         print(clam_config)
