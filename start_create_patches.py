@@ -44,12 +44,13 @@ def call_create_patches(args):
 def call_extract_features(args):
 
     input_folder = sys.argv[1]
+    input_path = "usr/local/data/{0}".format(input_folder)
     output_path = clam_config["output_path"] + "/{0}/data/clam".format(input_folder) # set output folder
     feat_dir = output_path + "/features"
-    csv_path = output_path + "process_list_autogen.csv"
+    csv_path = output_path + "/process_list_autogen.csv"
     data_h5_dir = output_path + "/patches"
 
-    clam_command = "python usr/local/src/clam/extract_features_fp.py --data_slide_dir {0} --csv_path {1} --feat_dir {2} --data_h5_dir".format(input_folder, csv_path, feat_dir, data_h5_dir)
+    clam_command = "python usr/local/src/clam/extract_features_fp.py --data_slide_dir {0} --csv_path {1} --feat_dir {2} --data_h5_dir {3}".format(input_folder, csv_path, feat_dir, data_h5_dir)
 
     print("Calling extract features...")
     print(clam_command)
