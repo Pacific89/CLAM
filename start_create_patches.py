@@ -2,10 +2,38 @@ import json
 import sys
 import os
 import argparse
+import h5py
+import pandas as pd
 
 # open config file for "RUN-COMMAND"
 with open("/usr/local/config/clam_command_config.json") as json_file:
     clam_config = json.loads(json_file.read())
+
+def output_to_json(output_path):
+
+    patch_path = output_path + "/patches"
+    h5file = os.listdir(patch_path)[0]
+    h5_path = patch_path + "/" + h5file
+
+    temp_list = []
+    with h5py.File(h5_path, 'r') as f:
+        num_patches = f['coords'].shape[0]
+        # if keys == 2: COORDS, FEATURES
+        if len(f.keys()) == 2:
+            for patch_num in range(num_patches):
+                patch_id = "patch_{}".format(patch_num)
+                d_ = {'patch_id' : patch_id, 'coord_x' : f['coords'][patch_num][0], 'coords_y' : f['coords'][patch_num][1], 'features' :f['features'][patch_num]}
+                temp_list.append(d_)
+        # ELSE: store COORDS only
+        else:
+            for patch_num in range(num_patches):
+                patch_id = "patch_{}".format(patch_num)
+                d_ = {'patch_id' : patch_id, 'coord_x' : f['coords'][patch_num][0], 'coords_y' : f['coords'][patch_num][1]}
+                temp_list.append(d_)
+
+    out_json_path = output_path + "results.json"
+    df = pd.DataFrame.from_dict(temp_list).set_index('patch_id')
+    df.to_json(out_json_path, orient='index')
 
 def call_create_patches(args):
 
@@ -39,6 +67,7 @@ def call_create_patches(args):
     # start CLAM:
     os.system(clam_command)
     print(clam_command)
+    output_to_json(output_path)
 
 
 def call_extract_features(args):
