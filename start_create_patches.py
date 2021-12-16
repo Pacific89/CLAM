@@ -67,7 +67,7 @@ def call_create_patches(args):
     # start CLAM:
     os.system(clam_command)
     print(clam_command)
-    output_to_json(output_path)
+    # output_to_json(output_path)
 
 
 def call_extract_features(args):
