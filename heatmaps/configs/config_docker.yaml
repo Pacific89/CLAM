@@ -9,7 +9,7 @@
       raw_save_dir: /usr/local/data/results/clam/heatmaps/raw
       # where to save final heatmaps
       production_save_dir: /usr/local/data/results/clam/heatmaps/heatmap_production_results
-      batch_size: 384
+      batch_size: 64
     data_arguments: 
       # where is data stored; can be a single str path or a dictionary of key, data_dir mapping
       data_dir: /usr/local/data
@@ -27,7 +27,7 @@
         LSCC: 1                        
     patching_arguments:
       # arguments for patching
-      patch_size: 256
+      patch_size: 128
       overlap: 0.5
       patch_level: 0
       custom_downsample: 1
