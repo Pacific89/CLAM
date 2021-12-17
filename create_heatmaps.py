@@ -429,7 +429,7 @@ if __name__ == '__main__':
 				else:
 					heatmap.save(os.path.join(p_slide_save_dir, heatmap_save_name))
 
-	with open(os.path.join(exp_args.raw_save_dir, exp_args.save_exp_code, 'config.yaml'), 'w+') as outfile:
+	with open(os.path.join(exp_args.raw_save_dir, 'config.yaml'), 'w+') as outfile:
 		yaml.dump(config_dict, outfile, default_flow_style=False)
 
 
