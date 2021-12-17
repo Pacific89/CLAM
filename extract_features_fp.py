@@ -100,6 +100,8 @@ if __name__ == '__main__':
 	for bag_candidate_idx in range(total):
 		slide_id = bags_dataset[bag_candidate_idx].split(args.slide_ext)[0]
 		bag_name = slide_id+'.h5'
+		print("ARGS H5:", args.data_h5_dir)
+
 		h5_file_path = os.path.join(args.data_h5_dir, 'patches', bag_name)
 		print("H5 File Path:", h5_file_path)
 		slide_file_path = os.path.join(args.data_slide_dir, slide_id+args.slide_ext)
