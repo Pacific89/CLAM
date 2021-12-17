@@ -6,9 +6,9 @@
       # name tag for saving generated figures and assets
       save_exp_code: HEATMAP_OUTPUT 
       # where to save raw asset files
-      raw_save_dir: heatmaps/raw
+      raw_save_dir: /usr/local/data/results/clam/heatmaps/raw/
       # where to save final heatmaps
-      production_save_dir: heatmaps/heatmap_production_results
+      production_save_dir: /usr/local/data/results/clam/heatmaps/heatmap_production_results/
       batch_size: 384
     data_arguments: 
       # where is data stored; can be a single str path or a dictionary of key, data_dir mapping
