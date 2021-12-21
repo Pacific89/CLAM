@@ -16,7 +16,7 @@
       # column name for key in data_dir (if a dict mapping is used)
       data_dir_key: source
       # csv list containing slide_ids (can additionally have seg/patch paramters, class labels, etc.)
-      process_list: /usr/local/data/results/clam/process_list_autogen.csv
+      process_list:
       # preset file for segmentation/patching
       preset: presets/tcga.csv
       # file extention for slides
