@@ -136,6 +136,7 @@ if __name__ == '__main__':
 			def_patch_params[key] = preset_df.loc[0, key]
 
 
+	print("data_args: ", data_args.process_list)
 	if data_args.process_list is None:
 		if isinstance(data_args.data_dir, list):
 			slides = []
