@@ -143,6 +143,7 @@ if __name__ == '__main__':
 				slides.extend(os.listdir(data_dir))
 		else:
 			slides = sorted(os.listdir(data_args.data_dir))
+			print("Slides:", slides)
 		slides = [slide for slide in slides if data_args.slide_ext in slide]
 		df = initialize_df(slides, def_seg_params, def_filter_params, def_vis_params, def_patch_params, use_heatmap_args=False)
 		
