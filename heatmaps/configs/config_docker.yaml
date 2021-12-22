@@ -18,7 +18,7 @@
       # csv list containing slide_ids (can additionally have seg/patch paramters, class labels, etc.)
       process_list:
       # preset file for segmentation/patching
-      preset: presets/tcga.csv
+      preset: /usr/local/src/clam/presets/tcga.csv
       # file extention for slides
       slide_ext: .svs
       # label dictionary for str: interger mapping (optional)
@@ -33,7 +33,7 @@
       custom_downsample: 1
     model_arguments: 
       # arguments for initializing model from checkpoint
-      ckpt_path: heatmaps/demo/ckpts/s_0_checkpoint.pt
+      ckpt_path: /usr/local/src/clam/heatmaps/demo/ckpts/s_0_checkpoint.pt
       model_type: clam_sb # see utils/eval_utils/
       initiate_fn: initiate_model # see utils/eval_utils/
       model_size: small
