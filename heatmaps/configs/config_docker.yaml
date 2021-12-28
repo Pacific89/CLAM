@@ -20,7 +20,7 @@
       # preset file for segmentation/patching
       preset: /usr/local/src/clam/presets/tcga.csv
       # file extention for slides
-      slide_ext: .svs
+      slide_ext: .tif
       # label dictionary for str: interger mapping (optional)
       label_dict:
         LUAD: 0
